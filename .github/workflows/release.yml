@@ -1,0 +1,100 @@
+name: Auto Build and Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**" # 仅当 src 目录下任何文件变动时触发
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate Version and Release Notes
+        id: release_info
+        shell: bash
+        run: |
+          set -e
+
+          # 获取最新 Tag
+          LAST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || true)
+
+          if [ -z "$LAST_TAG" ]; then
+            LAST_TAG="v1.0.0"
+          fi
+
+          echo "Last Tag: $LAST_TAG"
+
+
+          # 自动递增版本号
+          VERSION_NUM=${LAST_TAG#v}
+          MAJOR_MINOR=${VERSION_NUM%.*}
+          PATCH=${VERSION_NUM##*.}
+
+          NEW_PATCH=$((PATCH + 1))
+          NEW_TAG="v${MAJOR_MINOR}.${NEW_PATCH}"
+
+          echo "New Tag: $NEW_TAG"
+
+          echo "NEW_TAG=$NEW_TAG" >> "$GITHUB_OUTPUT"
+
+
+          # 获取 Commit 日志
+          if git rev-parse "$LAST_TAG" >/dev/null 2>&1; then
+            COMMITS=$(git log "$LAST_TAG"..HEAD --pretty=format:"- %s")
+          else
+            COMMITS=$(git log --pretty=format:"- %s")
+          fi
+
+
+          if [ -z "$COMMITS" ]; then
+            COMMITS="- 自动更新配置与脚本"
+          fi
+
+
+          # 生成 Release 描述
+          cat > release_body.txt <<EOF
+
+          ## 配置文档（Configuration）
+
+          - [文档：Documentation](https://github.com/akFace/mpv-menu-plugin-next/doc/)
+          - [示例 input.conf example](https://github.com/akFace/mpv-menu-plugin-next/example)
+          ---
+
+          ## Update log:
+
+          EOF
+
+          echo "$COMMITS" >> release_body.txt
+
+      - name: Create ZIP Archives
+        run: |
+          if [ -d "src" ]; then
+            zip -r menu.zip src
+          else
+            echo "Error: src directory not found!"
+            exit 1
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.release_info.outputs.NEW_TAG }}
+          name: ${{ steps.release_info.outputs.NEW_TAG }}
+          body_path: release_body.txt
+          files: |
+            menu.zip
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
