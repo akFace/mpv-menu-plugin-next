@@ -1,6 +1,6 @@
-# mpv-menu-plugin-next — mpvnet 风格跨平台选项菜单
+# mpv-menu-plugin-next — mpvnet style 跨平台选项菜单插件
 
-> 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpvnet v7.1.2.0** 的菜单布局、层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux。
+> 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpvnet v7.1.2.0** 的菜单布局、多层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux | Configurable context menu for mpv on Windows、macOS、Linux。
 
 ## 1. 功能概览(Features)
 
