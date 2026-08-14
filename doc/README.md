@@ -1,4 +1,4 @@
-# mpv-menu-plugin — mpv.net 风格跨平台选项菜单
+# mpv-menu-plugin-next — mpvnet 风格跨平台选项菜单
 
 ## `input.conf` 如何定义菜单
 
@@ -16,7 +16,7 @@ _       ignore                #menu: 视频 > 调色 > -
 - `add contrast -1`：真正执行的 mpv 命令。
 - `视频 > 调色 > 对比度 -1`：菜单层级和显示文字。
 - `-`：表示分隔线。
-- [完整示例：Full example](https://github.com/akFace/mpv-menu-plugin-next/example)
+- [完整示例：Full example](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example)
 
 ## `menu.conf` 配置说明
 

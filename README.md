@@ -1,6 +1,6 @@
-# mpv-menu-plugin-next — mpv.net 风格跨平台选项菜单
+# mpv-menu-plugin-next — mpvnet 风格跨平台选项菜单
 
-> 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpv.net v7.1.2.0** 的菜单布局、层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux。
+> 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpvnet v7.1.2.0** 的菜单布局、层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux。
 
 ## 1. 功能概览(Features)
 
@@ -37,6 +37,6 @@ portable_config/
 
 ## 配置文档（Configuration）
 
-- [文档：Documentation](https://github.com/akFace/mpv-menu-plugin-next/doc/)
-- [示例 input.conf example](https://github.com/akFace/mpv-menu-plugin-next/example)
+- [文档：Documentation](https://github.com/akFace/mpv-menu-plugin-next/blob/main/doc/README.md)
+- [示例 input.conf example](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example)
 - [已使用本插件的 mpv 配置-example for mpv config](https://github.com/akFace/mpv.config)
