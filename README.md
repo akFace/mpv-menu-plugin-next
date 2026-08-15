@@ -1,6 +1,7 @@
-# mpv-menu-plugin-next — mpvnet style 跨平台选项菜单插件
+# mpv-menu-plugin-next — mpv 跨平台右键选项菜单插件
 
-> 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpvnet v7.1.2.0** 的菜单布局、多层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux | Configurable context menu for mpv on Windows、macOS、Linux。
+> - 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpvnet v7.1.2.0** 的菜单布局、多层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux
+> - An mpv configurable context menu backend based on **Lua + ASS OSD**. Menu content is determined by `input.conf` & Can be used on Windows、macOS、Linux。
 
 ## 1. 功能概览(Features)
 
@@ -10,12 +11,13 @@
 
 - `input.conf` 驱动菜单内容，不需要另写一套菜单数据。
 - 支持多级菜单，例如 `视频 > 调色 > 对比度 +1`。
-- 支持样式自定义
+- 支持样式完全自定义，默认 mpvnet 风格
 - 支持动态菜单：轨道、章节、版本、播放列表、配置文件、音频设备等。
 - 支持长标题自动省略号 `…`，并为快捷键、子菜单箭头预留空间。
 - Windows / macOS / Linux 均提供文件、文件夹、保存对话框路径。
 
 ![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-14_21-31-47.jpg)
+[👉 中文菜单预览图](https://github.com/akFace/mpv.config#%E5%8A%9F%E8%83%BD%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95)
 
 ## 2. 安装（Installation）
 
