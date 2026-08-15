@@ -1,6 +1,6 @@
 # mpv-menu-plugin-next — mpv 跨平台右键选项菜单插件
 
-> - 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，目标是提供接近 **mpvnet v7.1.2.0** 的菜单布局、多层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux
+> - 一个基于 **Lua + ASS OSD** 的 mpv 右键选项菜单后端。菜单内容由 `input.conf` 决定，多层级、快捷键显示和交互方式，并尽可能兼容 Windows、macOS、Linux
 > - An mpv configurable context menu backend based on **Lua + ASS OSD**. Menu content is determined by `input.conf` & Can be used on Windows、macOS、Linux。
 
 ## 1. 功能概览(Features)
@@ -15,9 +15,6 @@
 - 支持动态菜单：轨道、章节、版本、播放列表、配置文件、音频设备等。
 - 支持长标题自动省略号 `…`，并为快捷键、子菜单箭头预留空间。
 - Windows / macOS / Linux 均提供文件、文件夹、保存对话框路径。
-
-![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-14_21-31-47.jpg)
-[👉 中文菜单预览图](https://github.com/akFace/mpv.config#%E5%8A%9F%E8%83%BD%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95)
 
 ## 2. 安装（Installation）
 
@@ -42,3 +39,26 @@ portable_config/
 - [文档：Documentation](https://github.com/akFace/mpv-menu-plugin-next/blob/main/doc/README.md)
 - [示例 input.conf example](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example)
 - [已使用本插件的 mpv 配置-example for mpv config](https://github.com/akFace/mpv.config)
+
+## 预览（preview）
+
+#### 默认风格（Default style）
+
+[👉 menu-macos-white.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/src/script-opts/menu.conf)
+
+![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-14_21-31-47.jpg)
+[👉 中文菜单预览图](https://github.com/akFace/mpv.config#%E5%8A%9F%E8%83%BD%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95)
+
+#### macos 白色风格（macos-white-style）
+
+[👉 menu-macos-white.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example/menu-macos-white.conf)
+
+![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-16_01-04-38.jpg)
+
+#### macos 深色风格（macos-dark-style）
+
+[👉 menu-macos-dark.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example/menu-macos-dark.conf)
+
+![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-16_01-10-14.jpg)
+
+#### 如果你有好看的风格配置文件`menu.conf`，也可以在 issue 中分享（If you have an attractive style `menu.conf`, you can also share it in the issue.）
