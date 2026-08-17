@@ -20,12 +20,23 @@
 
 将`src`文件文件夹内容复制 mpv 的配置目录，例如便携版：
 
+- 一般 mpv 安装版（非 Portable 便携版）配置文件目录：
+
+```
+Linux:   ~/.config/mpv/
+Windows: C:/Users/%username%/AppData/Roaming/mpv/
+macOS:   ~/Library/Application Support/mpv/
+```
+
+- mpv 便捷版 `mpv.exe` 同目录下，新建目录：`portable_config`
+
 ```text
 portable_config/
-├── scripts/
-│   ├── menu.lua
-│   ├── dyn_menu.lua
-│   └── dialog.lua
+├── scripts/menu/
+│            ├── main.lua
+│            ├── dyn_menu.lua
+|            ├── menu.lua
+│            └── dialog.lua
 ├── script-opts/
 │   └── menu.conf
 └── input.conf
