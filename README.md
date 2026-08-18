@@ -64,7 +64,7 @@ portable_config/
 
 #### macos 白色风格（macos-white-style）
 
-[👉 menu-macos-white.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example/menu-macos-white.conf)
+[👉 menu-macos-white.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example/script-opts/menu-macos-white.conf)
 
 ## ![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-16_01-04-38.jpg)
 
@@ -72,7 +72,7 @@ portable_config/
 
 #### macos 深色风格（macos-dark-style）
 
-[👉 menu-macos-dark.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example/menu-macos-dark.conf)
+[👉 menu-macos-dark.conf](https://github.com/akFace/mpv-menu-plugin-next/tree/main/example/script-opts/menu-macos-dark.conf)
 
 ![image](https://github.com/akFace/mpv-menu-plugin-next/raw/main/doc/images/Snipaste_2026-08-16_01-10-14.jpg)
 
