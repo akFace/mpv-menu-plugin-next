@@ -46,12 +46,12 @@ Enter   cycle fullscreen  #menu: 窗口 > 全屏 #@state=(fullscreen and 'checke
 
 `script-opts/dyn_menu.conf` 当前包含 `max_playlist_items`：设置为 `0` 表示不截断播放列表，完整生成并交给菜单滚动容器处理。
 
-## `menu.conf` 配置说明
+## `menu_style.conf` 配置说明
 
 配置文件位置：
 
 ```text
-portable_config/script-opts/menu.conf
+portable_config/script-opts/menu_style.conf
 ```
 
 如果 `font_name=` 留空，菜单会按照平台自动选择字体：
@@ -75,6 +75,7 @@ portable_config/script-opts/menu.conf
 | `root_indent_chars`            |       1 | 一级菜单文字缩进                                         |
 | `child_indent_chars`           |       1 | 子菜单文字缩进                                           |
 | `background`                   | #303030 | 菜单背景色                                               |
+| `radius`                       |       7 | 菜单圆角                                                 |
 | `border`                       | #6F6F6F | 菜单外框色                                               |
 | `border_width`                 |       1 | 外框宽度                                                 |
 | `text`                         | #F2F2F2 | 普通文字颜色                                             |
@@ -112,9 +113,6 @@ portable_config/script-opts/menu.conf
 | `click_to_show_submenus`       |   false | 是否要求点击才展开子菜单                                 |
 | `hide_root_separators`         |    true | 是否隐藏一级菜单内部的分隔线                             |
 | `playlist_header_indent_chars` |       1 | 播放列表顶部计数缩进                                     |
-| `menu_z`                       | `10000` | 菜单绘制层级                                             |
-| `suppress_osc`                 |   `yes` | 菜单期间抑制普通 OSC                                     |
-| `suppress_mouse_move`          |   `yes` | 菜单期间抑制普通鼠标移动交互                             |
 | `modal_mask`                   |    true | 是否启用全屏模态遮罩                                     |
 | `modal_mask_alpha`             |     255 | 模态遮罩透明度                                           |
 | `modal_z`                      | 1000000 | 模态遮罩层级                                             |
