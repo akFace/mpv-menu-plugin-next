@@ -184,7 +184,7 @@ Linux 需要系统中至少存在一组可用的剪贴板命令。
 
 确认：
 
-1. `scripts/menu.lua`、`dyn_menu.lua`、`dialog.lua` 在 `portable_config/scripts/` 下。
+1. `scripts/menu/menu.lua`、`dyn_menu.lua`、`dialog.lua` 在 `portable_config/scripts/menu` 下。
 2. 没有同时加载旧 `menu.dll`。
 3. `input.conf` 存在并包含 `#menu:` 定义。
 
