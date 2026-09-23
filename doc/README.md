@@ -69,12 +69,23 @@ _  set video-sync display-tempo     #menu: 视频 > 帧同步模式 > display-te
 例子：`10%` > `10%x0`
 
 ```
+_   ignore             #menu: 窗口 > 窗口大小 > 启动时窗口默认大小 #@state=('disabled')
+_   ignore             #menu: 窗口 > 窗口大小 > -
 _   set autofit ""     #menu: 窗口 > 窗口大小 > 自动（跟随视频分辨率） #@state=(autofit == "" and 'checked')
 _   set autofit "10%"  #menu: 窗口 > 窗口大小 > 10% #@state=(autofit == "10%x0" and 'checked')
 _   set autofit "20%"  #menu: 窗口 > 窗口大小 > 20% #@state=(autofit == "20%x0" and 'checked')
 _   set autofit "30%"  #menu: 窗口 > 窗口大小 > 30% #@state=(autofit == "30%x0" and 'checked')
 _   set autofit "40%"  #menu: 窗口 > 窗口大小 > 40% #@state=(autofit == "40%x0" and 'checked')
 _   set autofit "50%"  #menu: 窗口 > 窗口大小 > 50% #@state=(autofit == "50%x0" and 'checked')
+```
+
+3. disabled 禁止点击，可作为提示，也可作为状态管理
+
+例子：
+
+```
+_   ignore        #menu: 回放 > 提示：下边选项播放后才会启用，停止播放时会禁用 #@state=('disabled')
+Space cycle pause #menu: 回放 > 播放/暂停 #@state=(idle_active and 'disabled' or (pause or 'hidden'))
 ```
 
 ## `menu_style.conf` 配置说明
