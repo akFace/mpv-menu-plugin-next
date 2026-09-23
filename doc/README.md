@@ -46,7 +46,14 @@ Enter   cycle fullscreen  #menu: 窗口 > 全屏 #@state=(fullscreen and 'checke
 
 #### 动态`#@state=(...)`写法
 
-1. `#@state` 表达式里，**所有 mpv 选项名中的 `-` 都要写成 `_`**。例如：
+1. 属性简写模式（yes/no）
+
+```
+Enter   cycle fullscreen  #menu: 窗口 > 全屏 #@state=(fullscreen and 'checked')
+Ctrl+t  cycle ontop       #menu: 窗口 > 置顶 #@state=(ontop and 'checked')
+```
+
+2. `#@state` 表达式里，**所有 mpv 选项名中的 `-` 都要写成 `_`**。例如：
 
 | mpv 选项名       | `#@state` 里写法 |
 | ---------------- | ---------------- |
@@ -64,7 +71,7 @@ _  set video-sync display-resample  #menu: 视频 > 帧同步模式 > display-re
 _  set video-sync display-tempo     #menu: 视频 > 帧同步模式 > display-tempo #@state=(video_sync == "display-tempo" and 'checked')
 ```
 
-2. 带有百分比数字
+3. 带有百分比数字
 
 例子：`10%` > `10%x0`
 
@@ -79,7 +86,7 @@ _   set autofit "40%"  #menu: 窗口 > 窗口大小 > 40% #@state=(autofit == "4
 _   set autofit "50%"  #menu: 窗口 > 窗口大小 > 50% #@state=(autofit == "50%x0" and 'checked')
 ```
 
-3. disabled 禁止点击，可作为提示，也可作为状态管理
+4. disabled 禁止点击，可作为提示，也可作为状态管理
 
 例子：
 
