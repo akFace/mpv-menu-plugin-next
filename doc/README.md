@@ -44,7 +44,38 @@ Enter   cycle fullscreen  #menu: 窗口 > 全屏 #@state=(fullscreen and 'checke
 | `#@profiles`             | mpv 配置文件/profiles                                        |
 | `#@state=(...)`          | 根据 mpv 属性动态生成 `checked` / `disabled` / `hidden` 状态 |
 
-`script-opts/dyn_menu.conf` 当前包含 `max_playlist_items`：设置为 `0` 表示不截断播放列表，完整生成并交给菜单滚动容器处理。
+#### 动态`#@state=(...)`写法
+
+1. `#@state` 表达式里，**所有 mpv 选项名中的 `-` 都要写成 `_`**。例如：
+
+| mpv 选项名       | `#@state` 里写法 |
+| ---------------- | ---------------- |
+| `video-sync`     | `video_sync`     |
+| `audio-file`     | `audio_file`     |
+| `sub-file`       | `sub_file`       |
+| `audio-channels` | `audio_channels` |
+| `sub-pos`        | `sub_pos`        |
+
+例子：
+
+```
+_  set video-sync audio             #menu: 视频 > 帧同步模式 > audio #@state=(video_sync == "audio" and 'checked')
+_  set video-sync display-resample  #menu: 视频 > 帧同步模式 > display-resample #@state=(video_sync == "display-resample" and 'checked')
+_  set video-sync display-tempo     #menu: 视频 > 帧同步模式 > display-tempo #@state=(video_sync == "display-tempo" and 'checked')
+```
+
+2. 带有百分比数字
+
+例子：`10%` > `10%x0`
+
+```
+_   set autofit ""     #menu: 窗口 > 窗口大小 > 自动（跟随视频分辨率） #@state=(autofit == "" and 'checked')
+_   set autofit "10%"  #menu: 窗口 > 窗口大小 > 10% #@state=(autofit == "10%x0" and 'checked')
+_   set autofit "20%"  #menu: 窗口 > 窗口大小 > 20% #@state=(autofit == "20%x0" and 'checked')
+_   set autofit "30%"  #menu: 窗口 > 窗口大小 > 30% #@state=(autofit == "30%x0" and 'checked')
+_   set autofit "40%"  #menu: 窗口 > 窗口大小 > 40% #@state=(autofit == "40%x0" and 'checked')
+_   set autofit "50%"  #menu: 窗口 > 窗口大小 > 50% #@state=(autofit == "50%x0" and 'checked')
+```
 
 ## `menu_style.conf` 配置说明
 
@@ -133,6 +164,8 @@ portable_config/script-opts/menu_style.conf
 | `min_ui_scale`                 |     0.8 | 最小缩放范围                                             |
 | `max_ui_scale`                 |     2.5 | 最大缩放范围                                             |
 | `macos_font_scale`             |     1.0 | macos 字体视觉补偿                                       |
+
+- `script-opts/dyn_menu.conf` 当前包含 `max_playlist_items`：设置为 `0` 表示不截断播放列表，完整生成并交给菜单滚动容器处理。
 
 ## 组件职责
 
