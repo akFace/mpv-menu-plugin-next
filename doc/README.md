@@ -8,6 +8,8 @@
 Ctrl+1  add contrast -1       #menu: 视频 > 调色 > 对比度 -1
 Ctrl+2  add contrast  1       #menu: 视频 > 调色 > 对比度 +1
 _       ignore                #menu: 视频 > 调色 > -
+Ctrl+3  add brightness -1     #menu: 视频 > 调色 > 亮度 -1
+Ctrl+4  add brightness  1     #menu: 视频 > 调色 > 亮度 +1
 ```
 
 这里：
@@ -73,20 +75,20 @@ _  set video-sync display-tempo     #menu: 视频 > 帧同步模式 > display-te
 
 3. 带有百分比数字
 
-例子：`10%` > `10%x0`
+例子：`40%` > `40%x0`
 
 ```
 _   ignore             #menu: 窗口 > 窗口大小 > 启动时窗口默认大小 #@state=('disabled')
 _   ignore             #menu: 窗口 > 窗口大小 > -
 _   set autofit ""     #menu: 窗口 > 窗口大小 > 自动（跟随视频分辨率） #@state=(autofit == "" and 'checked')
-_   set autofit "10%"  #menu: 窗口 > 窗口大小 > 10% #@state=(autofit == "10%x0" and 'checked')
-_   set autofit "20%"  #menu: 窗口 > 窗口大小 > 20% #@state=(autofit == "20%x0" and 'checked')
-_   set autofit "30%"  #menu: 窗口 > 窗口大小 > 30% #@state=(autofit == "30%x0" and 'checked')
 _   set autofit "40%"  #menu: 窗口 > 窗口大小 > 40% #@state=(autofit == "40%x0" and 'checked')
 _   set autofit "50%"  #menu: 窗口 > 窗口大小 > 50% #@state=(autofit == "50%x0" and 'checked')
+_   set autofit "60%"  #menu: 窗口 > 窗口大小 > 60% #@state=(autofit == "60%x0" and 'checked')
+_   set autofit "70%"  #menu: 窗口 > 窗口大小 > 70% #@state=(autofit == "70%x0" and 'checked')
+_   set autofit "80%"  #menu: 窗口 > 窗口大小 > 80% #@state=(autofit == "80%x0" and 'checked')
 ```
 
-4. disabled 禁止点击，可作为提示，也可作为状态管理
+4. disabled 禁用，可作为提示，也可作为状态管理
 
 例子：
 
