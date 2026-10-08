@@ -187,6 +187,26 @@ portable_config/script-opts/menu_style.conf
 
 - `script-opts/dyn_menu.conf` 当前包含 `max_playlist_items`：设置为 `0` 表示不截断播放列表，完整生成并交给菜单滚动容器处理。
 
+## 方法调用
+
+第三方插件可调用组件实时更新面板样式，或者通过快捷键绑定
+
+```
+key script-message-to menu reload-menu #menu: 刷新菜单样式
+```
+
+```lua
+------------------------------------------------------------
+-- Reload 相关；reload‑menu
+------------------------------------------------------------
+local function reload_menu_scripts()
+    pcall(function()
+        mp.commandv('script-message-to', 'menu', 'reload-menu')
+    end)
+    return true
+end
+```
+
 ## 组件职责
 
 #### `menu.lua`
