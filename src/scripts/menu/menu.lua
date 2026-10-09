@@ -1908,7 +1908,7 @@ local function open_linux(multi,folder,save,default_name,src)
     end
     submit_async(args,function(out,err)
         if err then mp.osd_message('文件对话框: '..tostring(err),3);return end
-        local paths=split_lines((out or ''):gsub('\0','\n'))
+        local paths=split_lines((out or ''):gsub('%z','\n'))
         if #paths==0 then return end
         if folder or save then reply(src,save and 'dialog-save-reply' or 'dialog-open-folder-reply',paths[1])
         else
